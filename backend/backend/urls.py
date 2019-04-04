@@ -22,6 +22,12 @@ router = routers.DefaultRouter()
 router.register(r'reviews', views.ReviewView, 'review') 
 
 urlpatterns = [
+    path('api/list/', views.ListView,name="ListView"),
+    path('api/create/', views.CreateView,name="CreateView"),
+    path('api/detail/<int:pk>/', views.DetailView,name="DetailView"),
+    path('api/update/<int:pk>/', views.UpdateView,name="UpdateView"),
+    path('api/delete/<int:pk>/', views.DeleteView,name="DeleteView"),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls))
+
 ]
